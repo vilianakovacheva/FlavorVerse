@@ -1,0 +1,341 @@
+.heading-about-us {
+    padding: 100px;
+}
+
+.heading-about-us div {
+    padding-bottom: 13px;
+    border-bottom: 1px solid #B65F54;
+    font-size: 35px;
+    font-family: 'Playfair Display', sans-serif;
+    color: #512b25;
+}
+
+.our-story-section {
+    padding: 20px 100px 80px 100px;
+}
+
+.our-story {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.our-story h2 {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 43px;
+    margin-bottom: 35px;
+}
+
+.our-story img {
+    width: 90%;
+}
+
+.our-story p {
+    font-size: 22px;
+    text-align: center;
+    color: #42231f;
+}
+
+.our-story p span {
+    color: #B65F54;
+}
+
+.our-mission-section {
+    padding: 150px 100px;
+}
+
+.our-mission {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px
+}
+
+.mission-text {
+    flex: 0 0 calc(50% - 40px);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.mission-text h2 {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 43px;
+}
+
+.mission-text p {
+    font-size: 20px;
+    color: #894940;
+}
+
+.join-us-section {
+    padding: 80px 100px 180px 100px;
+}
+
+.join-us {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px
+}
+
+.join-text {
+    flex: 0 0 calc(50% - 50px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.join-text h2 {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 43px;
+    margin-bottom: 15px;
+}
+
+.join-text p {
+    font-size: 22px;
+    color: #723c35;
+}
+
+.join-text p span {
+    color: #B65F54;
+}
+
+.join-text ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.join-text ul li {
+    font-size: 20px;
+    color: #572a23;
+    font-style: italic;
+    list-style:circle;
+}
+
+.what-we-offer {
+    background: #f7b6ae;
+    padding: 100px;
+    margin-top: 20px;
+}
+
+.all-offers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.offer {
+    flex: 1 1 calc(25% - 40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.offer i {
+    font-size: 60px;
+    color: #96544b;
+}
+
+.offer .promise {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.offer .promise h4 {
+    font-size: 23px;
+    font-weight: 700;
+    color: #2c1916;
+}
+
+.offer .promise h5 {
+    font-size: 14px;
+    color: #ffffffe2;
+    font-weight: 300;
+}
+
+
+footer {
+    display: flex;
+    padding: 50px 100px 40px 100px;
+    flex-direction: column;
+    gap: 30px;
+    background: #F5F5F5;
+}
+
+.first-footer-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.footer-info {
+    flex: 0 0 calc(60% - 40px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-p {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.footer-p p:nth-of-type(1) {
+    color: #686868;
+}
+
+.footer-p p:nth-of-type(2) {
+    color: #B65F54;
+    font-style: italic;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.footer-links h6 {
+    font-size: 17px;
+}
+
+.footer-nav .footer-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-nav .footer-menu li a {
+    color: #686868;
+}
+
+.footer-nav .footer-menu li:hover {
+    text-decoration: underline;
+    color: grey;
+}
+
+.footer-line {
+    background: #DADADA;
+    width: 100%;
+    height: 2px;
+}
+
+.second-footer-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.second-footer-info p {
+    color: #5E5E5E;
+    font-size: 15px;
+}
+
+.social {
+    display: flex;
+    gap: 30px;
+}
+
+.social i {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.social a:hover {
+    color: #B65F54;
+}
+
+@media screen and (max-width: 1190px) {
+
+    .all-offers {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .heading-about-us, .our-story-section, .our-mission-section, .join-us-section {
+        padding: 60px 40px;
+    }
+
+    .what-we-offer {
+        padding: 60px;
+    }
+    
+    .our-story {
+        text-align: center;
+    }
+    
+    .our-story h2 {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .our-story p {
+        font-size: 15px;
+    }
+    
+    .our-mission {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .mission-text h2 {
+        font-size: 30px;
+    }
+    
+    .mission-text p {
+        font-size: 15px;
+    }
+    
+    .join-us {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .join-text {
+        order: 1;
+    }
+
+    .join-image {
+        order: 2;
+    }
+    
+    .join-text h2 {
+        font-size: 30px;
+    }
+    
+    .join-text p {
+        font-size: 16px;
+    }
+    
+    .join-text ul li {
+        font-size: 14px;
+    }
+
+    .all-offers {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+
+    
+}

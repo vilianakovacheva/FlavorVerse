@@ -11,11 +11,12 @@ import { AddRecipeComponent } from './components/recipes/add-recipe/add-recipe.c
 import { RecipeDetailsComponent } from './components/recipes/recipe-details/recipe-details.component';
 import { RecipesCatalogComponent } from './components/recipes/recipes-catalog/recipes-catalog.component';
 import { SearchRecipeComponent } from './components/recipes/search-recipe/search-recipe.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, HomeComponent, AboutUsComponent, LoginComponent, RegisterComponent, ProfileComponent, AddRecipeComponent, RecipeDetailsComponent, RecipesCatalogComponent, SearchRecipeComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, HomeComponent, AboutUsComponent, LoginComponent, RegisterComponent, ProfileComponent, AddRecipeComponent, RecipeDetailsComponent, RecipesCatalogComponent, SearchRecipeComponent, NotFoundComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

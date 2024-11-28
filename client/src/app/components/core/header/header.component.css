@@ -1,0 +1,204 @@
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 42px 90px;
+    background: #FDD4CF;
+}
+
+/* header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 42px 90px;
+    background: #FDD4CF;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; 
+} */
+
+.logo {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    font-weight: 450;
+    font-size: 30px;
+    letter-spacing: 0.4px;
+}
+
+.logo i {
+    font-size: 25px;
+}
+
+.logo p .verse-pink {
+    color: #B76156;
+}
+
+.header-nav .header-menu {
+    display: flex;
+    gap: 28px;
+}
+
+.header-menu li a {
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: 0.4px;
+    position: relative;
+    padding: 5px 0;
+    display: inline-block;
+    /* Ensures the line stretches the full width of the text */
+    transition: all 0.3s ease-in-out;
+}
+
+.header-menu li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #B76156;
+    /* Pink underline */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.header-menu li a:hover {
+    color: #B76156;
+    transform: translateY(-3px);
+    /* Slight upward movement */
+}
+
+.header-menu li a:hover::before {
+    width: 100%;
+    /* Full width underline */
+    left: 0;
+}
+
+.auth-btns {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.auth-btns a {
+    padding: 11px 34px;
+    border-radius: 5px;
+    font-size: 14px;
+    box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.login {
+    color: #000;
+    font-weight: 500;
+    background: #EBEBEB;
+}
+
+.signup {
+    color: #fff;
+    background: #B65F54;
+}
+
+.logout {
+    color: #fff;
+    background: #B65F54;
+}
+
+.auth-btns a:hover {
+    transform: scale(1.05);
+    box-shadow: rgba(0, 0, 0, 0.30) 0px 8px 20px;
+}
+
+.auth-btns a:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger Menu */
+.mobileTogglerCheckbox,
+.mobileToggler {
+    display: none;
+}
+
+
+@media screen and (max-width: 1190px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mobileToggler {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .fa-xmark {
+        display: none !important;
+    }
+
+    .mobileTogglerCheckbox:checked~label>.fa-bars {
+        display: none !important;
+    }
+
+    .mobileTogglerCheckbox:checked~label>.fa-xmark {
+        display: block !important;
+    }
+
+    /* Mobile Navigation */
+    header {
+        flex-wrap: wrap;
+    }
+
+    .header-nav {
+        display: none;
+        width: 100%;
+        background: #FDD4CF;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+
+    .mobileTogglerCheckbox:checked~.header-nav {
+        display: block;
+    }
+
+    .header-nav .header-menu {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .header-menu li a {
+        font-size: 16px;
+        padding: 10px 0;
+    }
+
+    /* Auth Buttons for Mobile */
+    .auth-btns {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+        width: 90%;
+    }
+
+    .auth-btns a {
+        width: 90%;
+        text-align: center;
+    }
+
+    
+}

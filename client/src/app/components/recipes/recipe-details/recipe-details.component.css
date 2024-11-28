@@ -1,0 +1,600 @@
+.details-heading-btns-section {
+    padding: 60px 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px
+}
+
+.details-heading-btns-info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.details-heading-btns-info h1 {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 60px;
+    color: #592f29;
+}
+
+.author-btns {
+    display: flex;
+    gap: 25px;
+}
+
+.author-btns button {
+    padding: 6px 17px;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.edit-btn {
+    background: #ad837e;
+    color: #fff;
+    border: 2px solid #75413a;
+}
+
+.edit-btn:hover {
+    background: #664e4b;
+}
+
+.delete-btn {
+    background: #c16358;
+    color: #fff;
+    border: 2px solid #75413a;
+}
+
+.delete-btn:hover {
+    background: #6b3832;
+}
+
+.user-btn-not-liked button {
+    padding: 6px 17px;
+    font-size: 17px;
+    font-weight: bold;
+    background: #ad837e;
+    color: #fff;
+    border: 2px solid #75413a;
+    border-radius: 5px;
+}
+
+.user-btn-not-liked button:hover {
+    background: #664e4b;
+}
+
+.user-liked {
+    color: #8c473f;
+    font-size: 23px;
+}
+
+.details-seperator {
+    width: 100%;
+    height: 1px;
+    background: #533535;
+}
+
+.details-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e89d93;
+    text-align: center;
+    margin-left: 150px;
+    margin-right: 150px;
+    border-radius: 10px;
+}
+
+.details-image img {
+    border-radius: 10px;
+    padding: 10px;
+    width: 70%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+/* .details-image-section {
+    text-align: center;
+    border-radius: 10px;
+    padding: 0 150px;
+}
+
+.details-image img {
+    width: 70%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 10px;
+} */
+
+.short-description {
+    padding: 60px 150px;
+    text-align: center;
+}
+
+.short-description p {
+    font-size: 22px;
+    color: #4c302d;
+}
+
+.recipe-details-info-section {
+    padding: 0 150px;
+}
+
+.recipe-details-info {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 30px;
+}
+
+.left {
+    flex: 0 0 calc(70% - 30px);
+    border-right: 1px solid #c3756d;
+    padding-right: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.time-servings-all-info {
+    display: flex;
+    gap: 20px;
+}
+
+.one-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-right: 1px solid #55302b;
+    padding-right: 40px;
+}
+
+.one-info h6 {
+    color: grey;
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.one-info p {
+    font-weight: 400;
+}
+
+.ingredients {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.ingredients h3 {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 35px;
+    color: #432a2a;
+}
+
+.ingredients-ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ingredients-ul li {
+    list-style: circle;
+    font-size: 17px;
+}
+
+.ingredients-ul li:nth-child(even) {
+    color: #c16358;
+}
+
+.instructions {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    margin-top: 20px;
+    justify-content: flex-start;
+}
+
+.instructions h3 {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 35px;
+    color: #432a2a;
+}
+
+.instructions-ol {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.instructions-ol li {
+    list-style: decimal;
+    font-size: 17px;
+}
+
+.instructions-ol li:nth-child(even) {
+    color: #8b554f;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+    margin-top: 300px;
+}
+
+.nutrition-facts {
+    background: #dfdfdf;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.nutrition-facts h2 {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 30px;
+}
+
+.calories-wrapper {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+    padding-bottom: 10px;
+}
+
+.calories-text, .calories-number {
+    font-weight: 300;
+}
+
+.quote {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.quote i {
+    font-size: 70px;
+}
+
+.quote p {
+    font-size: 30px;
+    font-style: italic;
+    color: #8c473f;
+}
+
+.whole-details-seperator {
+    width: 100%;
+    height: 8px;
+    background: #c16358;
+    margin-top: 150px;
+}
+
+.comments-section {
+    padding: 100px 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.comments-heading h2 {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 45px;
+}
+
+.comment-main-seperator {
+    width: 100%;
+    height: 1px;
+    background: rgb(154, 154, 154);
+}
+
+.no-comments h3 {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 45px;
+    color: #934d44;
+}
+
+.all-comments {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.one-comment {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.one-comment h6 {
+    font-size: 18px;
+    color: #7c4d47;
+    margin-bottom: 5px;
+}
+
+.one-comment p {
+    margin-left: 10px;
+    font-style: italic;
+    font-size: 18px;
+}
+
+.one-comment .comment-seperator {
+    width: 90%;
+    align-self: center;
+    height: 1px;
+    background: #dfb7b2;
+    margin-top: 20px;
+}
+
+.add-comment {
+    padding: 50px 150px 100px 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.add-comment h3 {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 30px;
+}
+
+.write-comment-form textarea {
+    width: 100%;
+    height: 300px;
+    border: none;
+    outline: none;
+    background: #efeeee;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+.write-comment-form textarea:focus {
+    border: 1px solid grey;
+}
+
+.write-comment-form input[type="submit"] {
+    margin-top: 30px;
+    background: #c16358;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 30px;
+    font-size: 15px;
+    
+}
+
+.write-comment-form input[type="submit"]:hover {
+    background: #733a33;
+    cursor: pointer;
+}
+
+.not-logged-comment {
+    padding: 50px 150px 100px 150px;
+    text-align: center;
+}
+
+.write-comment-not-authenticated {
+    font-size: 25px;
+}
+
+.write-comment-not-authenticated a {
+    background: #c16358;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 300;
+}
+
+.write-comment-not-authenticated a:hover {
+    background: #66342e;
+}
+
+@media screen and (max-width: 1190px) {
+
+    .not-logged-comment {
+        padding: 80px 40px;
+        text-align: center;
+        line-height: 3;
+    }
+    
+    .write-comment-not-authenticated {
+        font-size: 30px;
+    }
+    
+    .write-comment-not-authenticated a {
+        padding: 10px 20px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .details-heading-btns-section, .details-image-section, .short-description{
+        padding: 40px 60px;
+    }
+
+    .recipe-details-info-section, .comments-section, .add-comment {
+        padding: 35px;
+    }
+
+    .details-heading-btns-info {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .details-heading-btns-info h1 {
+        font-size: 51px;
+    }
+
+    .details-image {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    
+    .details-image img {
+        width: 80%;
+    }
+
+    .short-description p {
+        font-size: 17px;
+    }
+
+    .recipe-details-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .left {
+        flex: 1;
+        border-right: none;
+        padding-right: 0px;
+    }
+
+    .time-servings-all-info {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .one-info {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        border-right: 1px solid #55302b;
+        padding-right: 17px;
+    }
+    
+    .one-info h6 {
+        font-size: 10px;
+        text-align: center;
+    }
+    
+    .one-info p {
+        font-size: 15px;
+    }
+    
+    .ingredients {
+        margin-top: 20px;
+    }
+    
+    .ingredients h3 {
+        font-size: 30px;
+    }
+    
+    .ingredients-ul li {
+        font-size: 15.5px;
+    }
+    
+    .instructions h3 {
+        font-size: 30px;
+    }
+    
+    .instructions-ol li {
+        font-size: 15.5px;
+    }
+    
+    .right {
+        gap: 100px;
+        margin-top: 70px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nutrition-facts {
+        padding: 25px 40px;
+    }
+    
+    .nutrition-facts h2 {
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 25px;
+    }
+    
+    .quote {
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .quote i {
+        font-size: 55px;
+    }
+    
+    .quote p {
+        font-size: 25px;
+    } 
+
+    .comments-section {
+        margin-top: 15px;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .comments-heading h2 {
+        font-size: 40px;
+    }
+
+    .no-comments h3 {
+        margin-top: 20px;
+        font-size: 25px;
+    }
+    
+    .one-comment h6 {
+        font-size: 17px;
+    }
+    
+    .one-comment p {
+        margin-left: 5px;
+        font-size: 16px;
+    }
+    
+    .add-comment {
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .add-comment h3 {
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 30px;
+    }
+    
+    .write-comment-form textarea {
+        height: 200px;
+        font-size: 15px;
+    }
+    
+    .write-comment-form input[type="submit"] {
+        margin-top: 25px;
+        padding: 10px 25px;
+        font-size: 13px;
+        
+    }
+    
+    .write-comment-form input[type="submit"]:hover {
+        background: #733a33;
+        cursor: pointer;
+    }
+    
+    .not-logged-comment {
+        padding: 80px 40px;
+        text-align: center;
+        line-height: 3;
+    }
+    
+    .write-comment-not-authenticated {
+        font-size: 20px;
+    }
+    
+    .write-comment-not-authenticated a {
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+
+    
+}

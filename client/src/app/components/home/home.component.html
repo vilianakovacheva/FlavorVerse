@@ -10,7 +10,7 @@
             savory, or exotic, we’ve got something to ignite your taste buds!</p>
 
         <div class="home-hero-btn">
-            <a href="#">Explore Recipes</a>
+            <a routerLink="/recipes">Explore Recipes</a>
         </div>
 
     </div>
@@ -38,17 +38,17 @@
             kitchen. Inspire fellow food lovers with your culinary creations!</p>
 
         <!-- Not Authenticated -->
-        <!-- <p class="share-not-authenticated"><a href="#">Log in</a> or <a href="#">Sign up</a> (if you don't have an
+        <!-- <p class="share-not-authenticated"><a routerLink="/login">Log in</a> or <a routerLink="/register">Sign up</a> (if you don't have an
             account) to share your recipes</p> -->
 
         <!-- Authenticated -->
-        <a href="#">Create New Recipe</a>
+        <a routerLink="/add-recipe">Create New Recipe</a>
     </div>
 </section>
 
 <section class="home-recent-recipes">
     <h3>Recent Recipes</h3>
-    <a class="home-recent-recipes-btn" href="#">View more</a>
+    <a class="home-recent-recipes-btn" routerLink="/recipes">View more</a>
 
     <!-- <div class="no-recent-recipes">
         <h3>There are no recipes yet! <i class="fa-regular fa-face-sad-tear"></i></h3>

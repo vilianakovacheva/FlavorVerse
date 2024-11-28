@@ -1,0 +1,284 @@
+.search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 100px;
+}
+
+.search-h1 {
+    align-self: flex-start;
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 35px;
+}
+
+.search-container {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.search-container input[type="search"] {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #a3574d;
+    font-size: 20px;
+}
+
+.search-container input[type="search"]::placeholder {
+    color: rgb(171, 171, 171);
+}
+
+.search-container input:focus {
+    /* border-color: #a06356; */
+    border-bottom: 3px solid #723c34;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    font-size: 35px;
+    color: #dc7365;
+}
+
+.search-btn:hover {
+    color: #67352f;
+}
+
+.search-heading {
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 30px;
+    font-family: 'Playfair Display', sans-serif;
+    color: #713c35;
+    text-align: center;
+}
+
+.search-heading .pizza {
+    position: absolute;
+    width: 70px;
+}
+
+.search-heading .pizza {
+    bottom: -35px;
+    left: -20px;
+    transform: rotate(-5deg);
+}
+
+.no-search-results h3 {
+    font-size: 35px;
+    margin-top: 15px;
+    border: 1px solid #96544b;
+    padding: 10px 35px;
+    border-radius: 5px;
+    color: #4a2824;
+}
+
+.recipes-cards {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.recipe-card {
+    position: relative;
+    flex: 0 0 calc(25% - 30px);
+    border: 1px solid #e3e1e1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.recipe-card img {
+    width: 100%;
+    aspect-ratio: 15 / 9;
+    object-fit: cover;
+    display: block;
+}
+
+.recipe-card h6 {
+    padding-top: 5px;
+    padding-left: 10px;
+    font-size: 20px;
+    text-shadow: #ff008489 0px 5px 15px;
+}
+
+.recipe-person-cals {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 15px 20px 15px;
+}
+
+.recipe-person-cals h5 {
+    font-size: 16px;
+    font-weight: 450;
+}
+
+.calories {
+    border: 1px solid #e3e1e1;
+    padding: 7px 8px;
+    border-radius: 5px;
+}
+
+.calories i {
+    color: #BB695E;
+    margin-right: 4px;
+    font-size: 15px;
+}
+
+.calories p {
+    font-size: 14px;
+    color: #858484;
+    font-weight: 400;
+}
+
+/* Overlay effect */
+.recipe-card:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.recipe-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Black overlay with opacity */
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Smooth fade-in */
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.recipe-card:hover::before {
+    opacity: 1; /* Show overlay on hover */
+}
+
+/* "More details" button */
+.recipe-card .more-details-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Above the overlay */
+    background: #B65F54;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth fade-in */
+}
+
+.recipe-card:hover .more-details-btn {
+    opacity: 1; /* Show button on hover */
+    cursor: pointer;
+}
+
+.recipe-card .more-details-btn:hover {
+    background: #83463e; /* Slightly darker background on hover */
+}
+
+.what-we-offer {
+    background: #f7b6ae;
+    padding: 100px;
+    margin-top: 20px;
+}
+
+.all-offers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.offer {
+    flex: 1 1 calc(25% - 40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.offer i {
+    font-size: 60px;
+    color: #96544b;
+}
+
+.offer .promise {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.offer .promise h4 {
+    font-size: 23px;
+    font-weight: 700;
+    color: #2c1916;
+}
+
+.offer .promise h5 {
+    font-size: 14px;
+    color: #ffffffe2;
+    font-weight: 300;
+}
+
+@media screen and (max-width: 1190px) {
+
+    .recipe-card {
+        flex: 0 0 calc(50% - 30px);
+    }
+
+    .all-offers {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .search, .what-we-offer{
+        padding: 60px;
+    }
+
+    .pizza {
+        display: none;
+    }
+
+    .recipes-cards {
+        flex-direction: column;
+        gap: 45px;
+        margin-top: 10px;
+    }
+
+    .no-search-results {
+        text-align: center;
+    }
+
+    .all-offers {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+
+    
+}

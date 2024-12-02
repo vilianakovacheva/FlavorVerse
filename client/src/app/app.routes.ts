@@ -9,6 +9,7 @@ import { AddRecipeComponent } from './components/recipes/add-recipe/add-recipe.c
 import { SearchRecipeComponent } from './components/recipes/search-recipe/search-recipe.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ErrorMsgComponent } from './components/core/error-msg/error-msg.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -29,6 +30,7 @@ export const routes: Routes = [
 
     {path: 'about-us', component: AboutUsComponent},
 
+    {path: 'error', component: ErrorMsgComponent},
     {path: '404', component: NotFoundComponent},
     {path: '**', redirectTo: '/404'}
 ];

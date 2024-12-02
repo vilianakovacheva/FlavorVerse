@@ -21,15 +21,21 @@
             <li><a routerLink="/search">Search</a></li> <!-- All -->
             <li><a routerLink="/about-us">About us</a></li> <!-- All -->
 
+            @if(isLoggedIn) {
             <li><a routerLink="/add-recipe">Add Recipe</a></li> <!-- Authenticated -->
             <li><a routerLink="/profile">Profile</a></li> <!-- Authenticated -->
+            }
         </ul>
     </nav>
 
     <div class="auth-btns">
-        <a routerLink="/login" class="login">Log in</a> <!-- With profile -->
-        <a routerLink="/register" class="signup">Sign up</a> <!-- Without profile -->
-        <!-- <a routerLink="/logout" class="logout">Logout</a> --><!-- Authenticated -->
+        @if(isLoggedIn) {
+            <a class="logout" (click)="logout()">Logout</a>
+        } @else {
+            <a routerLink="/login" class="login">Log in</a> <!-- With profile -->
+            <a routerLink="/register" class="signup">Sign up</a> <!-- Without profile -->
+        }
+        
     </div>
 
 </header>

@@ -37,12 +37,13 @@
         <p class="share-p">Love to cook? Share your favorite recipes and let others experience the magic of your
             kitchen. Inspire fellow food lovers with your culinary creations!</p>
 
-        <!-- Not Authenticated -->
-        <!-- <p class="share-not-authenticated"><a routerLink="/login">Log in</a> or <a routerLink="/register">Sign up</a> (if you don't have an
-            account) to share your recipes</p> -->
+        @if(isLoggedIn) {
+            <a routerLink="/add-recipe">Create New Recipe</a>
+        } @else {
+            <p class="share-not-authenticated"><a routerLink="/login">Log in</a> or <a routerLink="/register">Sign up</a> (if you don't have an
+                account) to share your recipes</p>
+        }
 
-        <!-- Authenticated -->
-        <a routerLink="/add-recipe">Create New Recipe</a>
     </div>
 </section>
 

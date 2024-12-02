@@ -12,41 +12,89 @@
             <h1 class="form-h1">Sign Up To Join Our Family!</h1>
 
 
-            <form action="" class="register-form">
-
-                <div class="first-name">
-                    <i class="fa-regular fa-user"></i>
-                    <input type="text" id="first-name" name="first-name" placeholder="John">
-                </div>
-
-                <div class="lastName">
-                    <i class="fa-regular fa-user"></i>
-                    <input type="text" id="last-name" name="last-name" placeholder="Smith">
-                </div>
+            <form class="register-form" #form="ngForm" (ngSubmit)="register(form)">
 
                 <div class="email">
                     <i class="fa-regular fa-envelope"></i>
-                    <input type="email" id="email" name="email" placeholder="johnsmith@abv.bg">
+                    <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="johnsmith@abv.bg"
+                    ngModel
+                    required
+                    pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                    #emailInput="ngModel"
+                    >
                 </div>
+
+                @if(emailInput?.touched) {
+                    @if(emailInput?.errors?.['required']) {
+                        <p class="error">
+                            Email is required!
+                        </p>
+                    }
+
+                    @if(emailInput?.errors?.['pattern']) {
+                        <p class="error">Invalid email format!</p>
+                      }
+            }
 
                 <div class="password">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" id="password" name="password" placeholder="****">
+                    <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    placeholder="****"
+                    ngModel
+                    required
+                    minlength="5"
+                    #passwordInput="ngModel"
+                    >
                 </div>
+
+                @if(passwordInput?.touched) {
+                    @if(passwordInput?.errors?.['required']) {
+                        <p class="error">Password is required!</p>
+                    }
+
+                    @if(passwordInput?.errors?.['minlength']) {
+                        <p class="error">Password must be at least 5 characters long!</p>
+                    }
+                }
 
                 <div class="re-password">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="repeatPassword" id="repeatPassword" name="repeatPassword" placeholder="****">
+                    <input 
+                    type="password" 
+                    id="rePassword" 
+                    name="rePassword" 
+                    placeholder="****"
+                    ngModel
+                    required
+                    #rePasswordInput="ngModel"
+                    >
                 </div>
 
+                @if(rePasswordInput?.touched) {
+                    @if(rePasswordInput?.errors?.['required']) {
+                        <p class="error">Repeat password is required!</p>
+                    }
+
+                    @if(rePasswordInput.value !== passwordInput.value) {
+                        <p class="error">Passwords don't match!</p>
+                    }
+                }
+
                 <input type="submit" value="Sign up">
-                <p>Already have an account? <a href="#">Log in</a></p>
+                <p>Already have an account? <a routerLink="/login">Log in</a></p>
 
             </form>
 
             <div class="logo">
                 <i class="fa-solid fa-utensils"></i>
-                <a href="#">
+                <a routerLink="/">
                     <p>Flavor<span class="verse-pink">Verse</span></p>
                 </a>
             </div>

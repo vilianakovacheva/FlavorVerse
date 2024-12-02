@@ -12,26 +12,70 @@
             <h1 class="form-h1">Log in to your account:</h1>
 
 
-            <form action="" class="login-form">
+            <form #form="ngForm" (ngSubmit)="login(form)" class="login-form">
 
                 <div class="email">
                     <i class="fa-regular fa-envelope"></i>
-                    <input type="email" id="email" name="email" placeholder="johnsmith@abv.bg">
+                    <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="Enter email..."
+                    ngModel
+                    required
+                    pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                    #emailInput="ngModel"
+                    >
                 </div>
+
+                @if(emailInput?.touched) {
+                        @if(emailInput?.errors?.['required']) {
+                            <p class="error">
+                                Email is required!
+                            </p>
+                        }
+
+                        @if(emailInput?.errors?.['pattern']) {
+                            <p class="error">Invalid email format!</p>
+                          }
+                }
 
                 <div class="password">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" id="password" name="password" placeholder="****">
+                    <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    placeholder="Enter password..."
+                    ngModel
+                    required
+                    minlength="5"
+                    #passwordInput="ngModel"
+                    >
                 </div>
 
-                <input type="submit" value="Login">
-                <p>Don't have an account? <a href="#">Sign up</a></p>
+                @if(passwordInput?.touched) {
+                    @if(passwordInput?.errors?.['required']) {
+                        <p class="error">Password is required!</p>
+                    }
+
+                    @if(passwordInput?.errors?.['minlength']) {
+                        <p class="error">Password must be at least 5 characters long!</p>
+                    }
+                }
+
+                @if(errorMessage) {
+                    <p class="error">{{errorMessage}}</p>
+                }
+
+                <input [disabled]="form.invalid" [style]="{backgroundColor: form.invalid ? 'grey' : '#a06356', cursor: form.invalid ? 'not-allowed' : 'pointer'}" type="submit" value="Login">
+                <p>Don't have an account? <a routerLink="/register">Sign up</a></p>
 
             </form>
 
             <div class="logo">
                 <i class="fa-solid fa-utensils"></i>
-                <a href="#">
+                <a routerLink="/">
                     <p>Flavor<span class="verse-pink">Verse</span></p>
                 </a>
             </div>

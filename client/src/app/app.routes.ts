@@ -10,21 +10,23 @@ import { SearchRecipeComponent } from './components/recipes/search-recipe/search
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ErrorMsgComponent } from './components/core/error-msg/error-msg.component';
+import { UserGuard } from './guards/userGuard';
+import { GuestGuard } from './guards/guestGuard';
 
 export const routes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: 'home', component: HomeComponent},
 
-    {path: 'login', component: LoginComponent},
-    {path: 'register', component: RegisterComponent},
-    {path: 'profile', component: ProfileComponent},
+    {path: 'login', component: LoginComponent, canActivate: [GuestGuard]},
+    {path: 'register', component: RegisterComponent, canActivate: [GuestGuard]},
+    {path: 'profile', component: ProfileComponent, canActivate: [UserGuard]},
 
     {path: 'recipes', children: [
         {path: '', component: RecipesCatalogComponent},
         {path: ':recipeId', component: RecipeDetailsComponent}
     ]},
 
-    {path: 'add-recipe', component: AddRecipeComponent},
+    {path: 'add-recipe', component: AddRecipeComponent, canActivate: [UserGuard]},
     
     {path: 'search', component: SearchRecipeComponent},
 

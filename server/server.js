@@ -1328,17 +1328,14 @@
     	users: {
     		"35c62d76-8152-4626-8712-eeb96381bea8": {
     			email: "peter@abv.bg",
-    			username: "Peter",
     			hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
     		},
     		"847ec027-f659-4086-8032-5173e2f9c93a": {
     			email: "george@abv.bg",
-    			username: "George",
     			hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
     		},
     		"60f0cf0b-34b0-4abd-9769-8c42f830dffc": {
     			email: "john@abv.bg",
-    			username: "John",
     			hashedPassword: "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa302"
     		}
     	},
@@ -1453,6 +1450,113 @@
                 ],
                 _createdOn: 1613551388703
             },
+            "f744745c-5efc-45ef-849c-0226b71ee4ba": {
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "name": "Classic Chicken Soup",
+                "img": "https://images.alphacoders.com/553/thumb-1920-553946.jpg",
+                "description": "A hearty and comforting chicken soup made with tender chicken, fresh vegetables, and aromatic herbs, perfect for a cozy meal.",
+                "prepTime": 15,
+                "cookTime": 45,
+                "servings": 6,
+                "calories": 150,
+                "ingredients": [
+                    "Chicken (whole or bone-in pieces)",
+                    "Water or chicken broth",
+                    "Carrots",
+                    "Celery",
+                    "Onion",
+                    "Garlic",
+                    "Fresh parsley",
+                    "Bay leaf",
+                    "Salt",
+                    "Pepper",
+                    "Noodles (optional)"
+                ],
+                "steps": [
+                    "In a large pot, combine chicken and water or chicken broth",
+                    "Bring to a boil",
+                    "Skim off foam as needed",
+                    "Add chopped carrots, celery, onion, garlic, parsley, bay leaf, salt, and pepper",
+                    "Simmer on low heat for 30 minutes",
+                    "Remove chicken, shred meat, discard bones",
+                    "Return shredded chicken to the pot",
+                    "Add noodles (optional) and cook for 5–7 minutes until tender",
+                    "Taste and adjust seasoning",
+                    "Serve hot, garnished with fresh parsley."
+                ],
+                "_createdOn": 1733298293988
+            },
+            "d7ba1400-2bdc-49a7-8de4-fb0119e2c8e7": {
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "name": "Bulgarian Kavarma",
+                "img": "https://www.internationalcuisine.com/wp-content/uploads/2014/10/Bulgaria-Kavarma-1024x685.jpg",
+                "description": "A hearty and flavorful Bulgarian dish made with tender pork or chicken, simmered with onions, peppers, tomatoes, and spices, often served with crusty bread or rice.",
+                "prepTime": 30,
+                "cookTime": 240,
+                "servings": 4,
+                "calories": 573,
+                "ingredients": [
+                    "Pork (or chicken)",
+                    "Onion",
+                    "Bell peppers",
+                    "Tomatoes",
+                    "Mushrooms (optional)",
+                    "Garlic",
+                    "Paprika",
+                    "Sunflower oil",
+                    "White wine",
+                    "Salt",
+                    "Pepper",
+                    "Fresh parsley",
+                    "Rice or crusty bread (for serving)"
+                ],
+                "steps": [
+                    "Cut the meat into bite-sized pieces and season with salt and pepper",
+                    "Heat sunflower oil in a pan and sauté the meat until browned",
+                    "Remove meat and set aside",
+                    "In the same pan, sauté chopped onions, garlic, and bell peppers until softened",
+                    "Add sliced mushrooms (if using) and cook until tender",
+                    "Stir in diced tomatoes, paprika, and a splash of white wine",
+                    "Return the meat to the pan and simmer on low heat for 30–40 minutes until the sauce thickens",
+                    "Garnish with fresh parsley and serve with rice or crusty bread."
+                ],
+                "_createdOn": 1733298737814
+            },
+            "e0900bc5-463e-47b1-86bf-73899b4d75d0": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "name": "Blueberry Muffins",
+                "img": "https://c4.wallpaperflare.com/wallpaper/1004/263/704/food-blueberry-muffin-wallpaper-preview.jpg",
+                "description": "Soft and fluffy muffins packed with juicy blueberries, perfect for breakfast or a snack.",
+                "prepTime": 15,
+                "cookTime": 25,
+                "servings": 12,
+                "calories": 180,
+                "ingredients": [
+                    "All-purpose flour",
+                    "Granulated sugar",
+                    "Baking powder",
+                    "Baking soda",
+                    "Salt",
+                    "Milk",
+                    "Vegetable oil",
+                    "Egg",
+                    "Vanilla extract",
+                    "Fresh or frozen blueberries",
+                    "Optional: coarse sugar for topping"
+                ],
+                "steps": [
+                    "Preheat oven to 375°F (190°C) and line a muffin tin with paper liners",
+                    "In a bowl, mix flour, sugar, baking powder, baking soda, and salt",
+                    "In a separate bowl, whisk milk, oil, egg, and vanilla extract",
+                    "Gradually combine wet and dry ingredients until just mixed",
+                    "Gently fold in blueberries",
+                    "Divide batter evenly into the muffin tin",
+                    "Sprinkle with coarse sugar if desired",
+                    "Bake for 20–25 minutes until golden and a toothpick comes out clean",
+                    "Cool slightly and enjoy."
+                ],
+                "_createdOn": 1733299101184
+            }
         },
     	comments: {
     		"0a272c58-b7ea-4e09-a000-7ec988248f66": {

@@ -1,12 +1,31 @@
 <section class="details-heading-btns-section">
 
     <div class="details-heading-btns-info">
-        <h1>Pasta Bolognese</h1>
+        <h1>{{recipe.name}}</h1>
 
-        <div class="author-btns">
-            <button class="edit-btn">Edit</button>
-            <button class="delete-btn">Delete</button>
-        </div>
+        @if(showModal) {
+            <div class="modal-overlay" (click)="cancelDelete()">
+                <div class="modal" (click)="$event.stopPropagation()">
+                    <!-- Close button -->
+                    <button class="close-btn" (click)="cancelDelete()">×</button>
+                    
+                    <h3>Are you sure you want to delete your recipe for <span>{{recipe.name}}</span>?</h3>
+                    <div class="modal-buttons">
+                        <button class="delete-confirm-btn" (click)="confirmDelete()">Delete</button>
+                        <button class="cancel-btn" (click)="cancelDelete()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        }
+
+
+        @if(isAuthor) {
+            <div class="author-btns">
+                <a routerLink="/recipes/{{recipe._id}}/edit"  class="edit-btn">Edit</a>
+                <button class="delete-btn" (click)="openModal()">Delete</button>
+            </div>
+        }
+        
 
         <!-- <div class="user-btn-not-liked">
             <button class="like-btn">Like</button>
@@ -25,13 +44,13 @@
 <section class="details-image-section">
 
     <div class="details-image">
-        <img src="https://images.alphacoders.com/130/1308370.jpg">
+        <img src={{recipe.img}}>
     </div>
 
 </section>
 
 <section class="short-description">
-    <p>Pasta Bolognese is a classic Italian dish with a rich, meaty tomato sauce, served over pasta like tagliatelle or spaghetti. Perfect for a comforting and flavorful meal.</p>
+    <p>{{recipe.description}}</p>
 </section>
 
 <section class="recipe-details-info-section">
@@ -44,17 +63,17 @@
 
                 <div class="one-info">
                     <h6>PREP TIME</h6>
-                    <p>15 MINS</p>
+                    <p>{{recipe.prepTime}} MINS</p>
                 </div>
     
                 <div class="one-info">
                     <h6>COOK TIME</h6>
-                    <p>60 MINS</p>
+                    <p>{{recipe.cookTime}} MINS</p>
                 </div>
     
                 <div class="one-info">
                     <h6>SERVINGS</h6>
-                    <p>4 PEOPLE</p>
+                    <p>{{recipe.servings}}</p>
                 </div>
     
                 
@@ -64,21 +83,9 @@
                 <h3>Ingredients</h3>
 
                 <ul class="ingredients-ul">
-                    <li>1 tbsp olive oil</li>
-                    <li>1 onion, finely chopped</li>
-                    <li>1 carrot, finely chopped</li>
-                    <li>1 celery stalk, finely chopped</li>
-                    <li>2 garlic cloves, minced</li>
-                    <li>1 lb (450g) ground beef (or a mix of beef and pork)</li>
-                    <li>1/2 cup red wine (optional)</li>
-                    <li>1 can (14 oz/400g) crushed tomatoes</li>
-                    <li>2 tbsp tomato paste</li>
-                    <li>1 tsp dried oregano</li>
-                    <li>1 tsp dried basil</li>
-                    <li>Salt and pepper to taste</li>
-                    <li>1/2 cup whole milk or heavy cream</li>
-                    <li>1 lb (450g) pasta (spaghetti, tagliatelle, or your choice)</li>
-                    <li>Grated Parmesan cheese (optional, for serving)</li>
+                    @for (ingredient of recipe.ingredients; track $index) {
+                        <li>{{ingredient}}</li>
+                    }
                 </ul>
             </div>
 
@@ -86,15 +93,9 @@
                 <h3>Steps</h3>
 
                 <ol class="instructions-ol">
-                    <li>Heat olive oil in a large pan over medium heat. Add onion, carrot, and celery, and sauté until softened (about 5-7 minutes).</li>
-                    <li>Add garlic and cook for another 1 minute.</li>
-                    <li>Add the ground meat to the pan and cook until browned, breaking it apart with a spoon as it cooks.</li>
-                    <li>Pour in the wine (if using) and cook for 2-3 minutes, allowing it to reduce slightly.</li>
-                    <li>Stir in crushed tomatoes, tomato paste, oregano, basil, salt, and pepper. Simmer on low heat for 30-45 minutes, stirring occasionally.</li>
-                    <li>Add milk or cream and stir to combine. Let it cook for another 5-10 minutes.</li>
-                    <li>Meanwhile, cook the pasta according to package instructions. Drain and reserve some pasta water.</li>
-                    <li>Toss the pasta with the sauce, adding a little pasta water if needed to combine.</li>
-                    <li>Serve with grated Parmesan, if desired.</li>
+                    @for (step of recipe.steps; track $index) {
+                        <li>{{step}}</li>
+                    }
                 </ol>
             </div>
 
@@ -112,7 +113,7 @@
                     </div>
 
                     <div class="calories-number">
-                        <p>700</p>
+                        <p>{{recipe.calories}}</p>
                     </div>
 
                 </div>

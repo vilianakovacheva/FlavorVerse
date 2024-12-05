@@ -29,6 +29,13 @@
     border-radius: 5px;
 }
 
+.author-btns .edit-btn {
+    padding: 6px 17px;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
 .edit-btn {
     background: #ad837e;
     color: #fff;
@@ -144,7 +151,9 @@
     flex-direction: column;
     gap: 5px;
     border-right: 1px solid #55302b;
-    padding-right: 40px;
+    padding-right: 22px;
+    justify-content: center;
+    align-items: center;
 }
 
 .one-info h6 {
@@ -388,6 +397,87 @@
     background: #66342e;
 }
 
+/* Modal css */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    position: relative; /* This makes the close button position relative to the modal */
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 430px; /* Optional: Adjust width if needed */
+}
+
+.modal h3 {
+    color: #7a403a;
+}
+
+.modal h3 span {
+    color: #412420;
+}
+
+.modal-buttons {
+    margin-top: 20px;
+}
+
+.delete-confirm-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.delete-confirm-btn:hover {
+    background: rgb(154, 3, 3);
+}
+
+.cancel-btn {
+    background: grey;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cancel-btn:hover {
+    background: rgb(80, 80, 80);
+}
+ 
+.close-btn {
+    position: absolute;
+    top: 0px; /* Adjust to align properly within the modal */
+    right: 5px; /* Adjust to align properly within the modal */
+    background: none;
+    border: none;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+
+
 @media screen and (max-width: 1190px) {
 
     .not-logged-comment {
@@ -594,6 +684,10 @@
     .write-comment-not-authenticated a {
         padding: 10px 15px;
         font-size: 15px;
+    }
+
+    .modal {
+        width: 300px; /* Optional: Adjust width if needed */
     }
 
     

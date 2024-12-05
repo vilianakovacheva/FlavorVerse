@@ -12,6 +12,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ErrorMsgComponent } from './components/core/error-msg/error-msg.component';
 import { UserGuard } from './guards/userGuard';
 import { GuestGuard } from './guards/guestGuard';
+import { EditRecipeComponent } from './components/recipes/edit-recipe/edit-recipe.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -23,7 +24,8 @@ export const routes: Routes = [
 
     {path: 'recipes', children: [
         {path: '', component: RecipesCatalogComponent},
-        {path: ':recipeId', component: RecipeDetailsComponent}
+        {path: ':recipeId', component: RecipeDetailsComponent},
+        {path: ':recipeId/edit', component: EditRecipeComponent}
     ]},
 
     {path: 'add-recipe', component: AddRecipeComponent, canActivate: [UserGuard]},

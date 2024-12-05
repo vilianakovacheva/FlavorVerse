@@ -6,64 +6,192 @@
 
             <h1>Add Recipe</h1>
 
-            <form action="" class="add-recipe-form">
+            <form #form="ngForm" (ngSubmit)="addRecipe(form)" class="add-recipe-form">
 
                 <div class="dish-info dish-name">
                     <label for="name">Dish Name:</label>
-                    <input type="text" placeholder="Pasta">
+                    <input 
+                    type="text" 
+                    id="name"
+                    name="name"
+                    placeholder="Pasta"
+                    ngModel
+                    required
+                    #nameInput="ngModel"
+                    >
                 </div>
+
+                @if(nameInput?.touched) {
+                    @if(nameInput?.errors?.['required']) {
+                        <p class="error">Dish Name is required!</p>
+                    }
+                }
 
                 <div class="dish-info dish-image">
                     <label for="image">Image URL:</label>
-                    <input placeholder="https://images.alphacoders.com/130/1308370.jpg">
+                    <input 
+                    type="url"
+                    id="img"
+                    name="img"
+                    placeholder="https://images.alphacoders.com/130/1308370.jpg"
+                    ngModel
+                    required
+                    pattern="https?://.+"
+                    #imgInput="ngModel"
+                    >
                 </div>
+
+                @if(imgInput?.touched) {
+                    @if(imgInput?.errors?.['required']) {
+                        <p class="error">Image URL is required!</p>
+                    }
+
+                    @if(imgInput?.errors?.['pattern']) {
+                        <p class="error">Invalid URL format!</p>
+                    }
+                }
 
                 <div class="dish-info dish-description">
                     <label for="dishDescription">Short Description:</label>
-                    <textarea rows="5" placeholder="Pasta Bolognese is a classic Italian dish with a rich, meaty tomato sauce, served over pasta like tagliatelle or spaghetti. Perfect for a comforting and flavorful meal."></textarea>
+                    <textarea 
+                    id="description"
+                    name="description"
+                    rows="5" 
+                    placeholder="Pasta Bolognese is a classic Italian dish with a rich, meaty tomato sauce, served over pasta like tagliatelle or spaghetti. Perfect for a comforting and flavorful meal."
+                    ngModel
+                    required
+                    #descriptionInput="ngModel"
+                    ></textarea>
                 </div>
+
+                @if(descriptionInput?.touched) {
+                    @if(descriptionInput?.errors?.['required']) {
+                        <p class="error">Description is required!</p>
+                    }
+                }
 
                 <div class="dish-info dish-prepTime">
                     <label for="time">Prep Time (mins):</label>
-                    <input type="number" placeholder="15">
+                    <input 
+                    type="number" 
+                    id="prepTime"
+                    name="prepTime"
+                    placeholder="15"
+                    ngModel
+                    required
+                    #prepTimeInput="ngModel"
+                    >
                 </div>
+
+                @if(prepTimeInput?.touched) {
+                    @if(prepTimeInput?.errors?.['required']) {
+                        <p class="error">Prep Time is required!</p>
+                    }
+                }
                 
                 <div class="dish-info dish-cookTime">
                     <label for="time">Cook Time (mins):</label>
-                    <input type="number" placeholder="60">
+                    <input 
+                    type="number" 
+                    id="cookTime"
+                    name="cookTime"
+                    placeholder="60"
+                    ngModel
+                    required
+                    #cookTimeInput="ngModel"
+                    >
                 </div>
+
+                @if(cookTimeInput?.touched) {
+                    @if(cookTimeInput?.errors?.['required']) {
+                        <p class="error">Cook Time is required!</p>
+                    }
+                }
 
                 <div class="dish-info dish-servings">
                     <label for="time">Servings:</label>
-                    <input type="number" placeholder="4">
+                    <input 
+                    type="number" 
+                    id="servings"
+                    name="servings"
+                    placeholder="4"
+                    ngModel
+                    required
+                    #servingsInput="ngModel"
+                    >
                 </div>
+
+                @if(servingsInput?.touched) {
+                    @if(servingsInput?.errors?.['required']) {
+                        <p class="error">Servings are required!</p>
+                    }
+                }
 
                 <div class="dish-info dish-calories">
                     <label for="time">Calories / per serving:</label>
-                    <input type="number" placeholder="440">
+                    <input 
+                    type="number" 
+                    id="calories"
+                    name="calories"
+                    placeholder="440"
+                    ngModel
+                    required
+                    #caloriesInput="ngModel"
+                    >
                 </div>
 
+                @if(caloriesInput?.touched) {
+                    @if(caloriesInput?.errors?.['required']) {
+                        <p class="error">Calories are required!</p>
+                    }
+                }
+
                 <div class="dish-ingredients">
-                    <h3>Ingredients</h3>
-                    <div>
-                      <input placeholder="Enter ingredient"/>
-                      <button class="remove-btn" type="button">Remove</button>
-                    </div>
-                    <button class="add-something-btn" type="button">Add Ingredient</button>
+                    <label for="ingredients">Ingredients <span>(slash-separated)</span></label>
+                    <textarea 
+                    id="ingredients" 
+                    name="ingredients" 
+                    rows="5" 
+                    placeholder="Olive oil / Ground beef or pork / Onion / Garlic / Carrot / Celery / Tomato paste / Crushed tomatoes / Beef broth / Red wine (optional) / Oregano / Basil / Bay leaf / Salt / Pepper / Pasta / Parmesan (optional)"
+                    ngModel
+                    required
+                    #ingredientsInput="ngModel"
+                    ></textarea>
+
                   </div>
+
+                  @if(ingredientsInput?.touched) {
+                    @if(ingredientsInput?.errors?.['required']) {
+                        <p class="error">Ingredients are required!</p>
+                    }
+                }
 
 
                   <div class="dish-instructions">
-                    <h3>Steps</h3>
-                    <div>
-                      <textarea placeholder="Enter instruction"></textarea>
-                      <button class="remove-btn" type="button">Remove</button>
-                    </div>
-                    <button class="add-something-btn" type="button">Add Instruction</button>
+                    <label for="steps">Steps <span>(slash-separated)</span></label>
+                    <textarea 
+                    id="steps" 
+                    name="steps" 
+                    rows="7" 
+                    placeholder="Cook ground meat in olive oil until browned / Add chopped vegetables and sauté until softened / Stir in tomato paste, crushed tomatoes, beef broth, and wine / Season with herbs and spices, then simmer for 45 minutes / Cook pasta and serve with the sauce, garnished with Parmesan if desired."
+                    ngModel
+                    required
+                    #stepsInput="ngModel"
+                    ></textarea>
                   </div>
 
+                  @if(stepsInput?.touched) {
+                    @if(stepsInput?.errors?.['required']) {
+                        <p class="error">Steps are required!</p>
+                    }
+                }
 
-                  <button class="add-recipe-btn" type="submit">Add Recipe</button>
+                @if(errorMessage) {
+                    <p class="error">{{errorMessage}}</p>
+                }
+
+
+                  <button [disabled]="form.invalid" [style]="{backgroundColor: form.invalid ? 'grey' : '#4f2924', cursor: form.invalid ? 'not-allowed' : 'pointer'}" class="add-recipe-btn" type="submit">Add Recipe</button>
 
             </form>
 

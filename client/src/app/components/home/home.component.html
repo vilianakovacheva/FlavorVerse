@@ -38,10 +38,11 @@
             kitchen. Inspire fellow food lovers with your culinary creations!</p>
 
         @if(isLoggedIn) {
-            <a routerLink="/add-recipe">Create New Recipe</a>
+        <a routerLink="/add-recipe">Create New Recipe</a>
         } @else {
-            <p class="share-not-authenticated"><a routerLink="/login">Log in</a> or <a routerLink="/register">Sign up</a> (if you don't have an
-                account) to share your recipes</p>
+        <p class="share-not-authenticated"><a routerLink="/login">Log in</a> or <a routerLink="/register">Sign up</a>
+            (if you don't have an
+            account) to share your recipes</p>
         }
 
     </div>
@@ -49,67 +50,37 @@
 
 <section class="home-recent-recipes">
     <h3>Recent Recipes</h3>
+
+    @if(isLoading) {
+    <app-loader />
+    } @else {
+    @if(recipes.length > 0) {
     <a class="home-recent-recipes-btn" routerLink="/recipes">View more</a>
 
-    <!-- <div class="no-recent-recipes">
-        <h3>There are no recipes yet! <i class="fa-regular fa-face-sad-tear"></i></h3>
-    </div> -->
-
     <div class="recent-recipes-cards">
-
+        @for (recipe of recipes; track $index) {
         <div class="recipe-card">
-            <img src="https://images7.alphacoders.com/129/1290221.jpg">
-            <a href="#" class="more-details-btn">More details</a>
-            <h6>Pizza</h6>
+            <img src={{recipe.img}}>
+            <a routerLink="/recipes/{{recipe._id}}" class="more-details-btn">More details</a>
+            <h6>{{recipe.name}}</h6>
 
-            <div class="recipe-person-cals">
-                <h5>John Smith</h5>
+            <div class="recipe-cals">
                 <div class="calories">
-                    <p><i class="fa-solid fa-fire-flame-curved"></i> 500 cals</p>
+                    <p><i class="fa-solid fa-fire-flame-curved"></i> {{recipe.calories}} cals</p>
                 </div>
             </div>
         </div>
-
-        <div class="recipe-card">
-            <img src="https://images6.alphacoders.com/100/thumb-1920-1002794.jpg">
-            <a href="#" class="more-details-btn">More details</a>
-            <h6>Muffins</h6>
-
-            <div class="recipe-person-cals">
-                <h5>Pamela Anderson</h5>
-                <div class="calories">
-                    <p><i class="fa-solid fa-fire-flame-curved"></i> 530 cals</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="recipe-card">
-            <img src="https://images.alphacoders.com/130/1308370.jpg">
-            <a href="#" class="more-details-btn">More details</a>
-            <h6>Pasta</h6>
-
-            <div class="recipe-person-cals">
-                <h5>Elena Wilson</h5>
-                <div class="calories">
-                    <p><i class="fa-solid fa-fire-flame-curved"></i> 390 cals</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="recipe-card">
-            <img src="https://img.freepik.com/premium-photo/choclate-cake-4k-image_758367-103.jpg">
-            <a href="#" class="more-details-btn">More details</a>
-            <h6>Chocolade Cake</h6>
-
-            <div class="recipe-person-cals">
-                <h5>Mary Smith</h5>
-                <div class="calories">
-                    <p><i class="fa-solid fa-fire-flame-curved"></i> 794 cals</p>
-                </div>
-            </div>
-        </div>
+        }
 
     </div>
+    } @else {
+    <div class="no-recent-recipes">
+        <h3>There are no recipes yet! <i class="fa-regular fa-face-sad-tear"></i></h3>
+    </div>
+    }
+    }
+
+
 
 </section>
 

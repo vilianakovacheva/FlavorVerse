@@ -226,7 +226,6 @@
     border-radius: 5px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     transition: transform 0.3s ease;
-    /* Smooth scaling effect */
 }
 
 .recipe-card img {
@@ -243,16 +242,11 @@
     text-shadow: #ff008489 0px 5px 15px;
 }
 
-.recipe-person-cals {
+.recipe-cals {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: left;
     padding: 25px 15px 20px 15px;
-}
-
-.recipe-person-cals h5 {
-    font-size: 16px;
-    font-weight: 450;
 }
 
 .calories {
@@ -456,6 +450,10 @@
         justify-content: center;
         align-items: center;
         margin-top: -20px;
+    }
+
+    .share-not-authenticated {
+        line-height: 2;
     }
 
     .share-img {

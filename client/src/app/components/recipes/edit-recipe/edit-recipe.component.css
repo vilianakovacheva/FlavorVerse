@@ -1,0 +1,205 @@
+.edit-recipe-section {
+    padding: 130px;
+}
+
+.edit-recipe-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.edit-recipe-form-wrapper {
+    flex: 0 0 calc(60% - 20px);
+    border-right: 1px solid grey;
+    padding-right: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.edit-recipe-form-wrapper h1 {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 50px;
+    color: #6d3b34;
+}
+
+.edit-recipe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.dish-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dish-info label {
+    font-size: 25px;
+    color: #42231f;
+}
+
+.dish-info input, .dish-info textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #B65F54;
+    padding-bottom: 11px;
+    font-size: 18.5px;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.dish-info input:focus, .dish-info textarea:focus {
+    border-bottom: 2px solid #793f38;
+}
+
+.dish-ingredients {
+    margin-top: 20px;
+}
+
+.dish-ingredients,  .dish-instructions {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.dish-ingredients label ,  .dish-instructions label {
+    font-size: 27px;
+    color: #42231f;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.dish-ingredients label span,  .dish-instructions label span{
+    font-size: 23px;
+    color: #502b26;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.dish-ingredients textarea,  .dish-instructions textarea {
+    width: 80%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #B65F54;
+    padding-bottom: 11px;
+    font-size: 18.5px;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.dish-ingredients textarea:focus,  .dish-instructions textarea:focus {
+    border-bottom: 2px solid #793f38;
+}
+
+.edit-recipe-form .edit-recipe-btn {
+    margin-top: 50px;
+    align-self: center;
+    width: 70%;
+    padding: 15px 35px;
+    font-size: 22px;
+    border: none;
+    background: #4f2924;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+.edit-recipe-form .edit-recipe-btn:hover {
+    background: #6d362f;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.images-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 10px;
+}
+
+.images-wrapper .edit-recipe-image img {
+    width: 50%;
+    border-radius: 50%;
+}
+
+.images-wrapper .edit-recipe-image:nth-child(even) {
+    text-align: right;
+}
+
+.error {
+    color: red;
+    font-size: 20px;
+  }
+
+@media screen and (max-width: 768px) {
+
+    .edit-recipe-section{
+        padding: 90px 60px;
+    }
+
+
+    .edit-recipe-div {
+        flex-direction: column;
+        justify-content: center;
+        gap: 120px;
+    }
+    
+    
+    .edit-recipe-form-wrapper {
+        flex: 1;
+        border-right: none;
+        padding-right: 0px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .edit-recipe-form-wrapper h1 {
+        font-size: 45px;
+        text-align: center;
+    }
+    
+    .edit-recipe-form {
+        gap: 55px;
+    }
+    
+    .dish-info {
+        gap: 15px;
+    }
+    
+    .dish-info label {
+        font-size: 20px;
+    }
+    
+    .dish-info input, .dish-info textarea {
+        font-size: 15px;
+    }
+    
+    .dish-ingredients {
+        margin-top: 15px;
+    }
+    
+    .dish-ingredients label ,  .dish-instructions label {
+        font-size: 25px;
+    }
+
+    .dish-ingredients label span,  .dish-instructions label span{
+        font-size: 20px;
+    }
+    
+    .dish-ingredients textarea,  .dish-instructions textarea {
+        font-size: 15px;
+    }
+    
+    .edit-recipe-form .edit-recipe-btn {
+        margin-top: 40px;
+        width: 100%;
+        padding: 10px 30px;
+        font-size: 20px;
+    }
+
+    
+}

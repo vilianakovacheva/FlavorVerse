@@ -3,12 +3,14 @@
     padding: 30px 50px;
     border-radius: 5px;
     position: relative;
+    margin: 0 auto;
 }
 
 .all-recipes-heading h1 {
     font-size: 50px;
     color: #9d5248;
     font-family: 'Playfair Display', sans-serif;
+    text-align: center;
 }
 
 .fork {
@@ -33,8 +35,9 @@
 .all-recipes {
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     gap: 100px;
     padding: 100px;
 }
@@ -131,7 +134,7 @@
     gap: 10px;
     border-radius: 5px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    transition: transform 0.3s ease; /* Smooth scaling effect */
+    transition: transform 0.3s ease;
 }
 
 .recipe-card img {
@@ -148,16 +151,11 @@
     text-shadow: #ff008489 0px 5px 15px;
 }
 
-.recipe-person-cals {
+.recipe-cals {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: left;
     padding: 25px 15px 20px 15px;
-}
-
-.recipe-person-cals h5 {
-    font-size: 16px;
-    font-weight: 450;
 }
 
 .calories {
@@ -178,9 +176,8 @@
     font-weight: 400;
 }
 
-/* Overlay effect */
 .recipe-card:hover {
-    transform: scale(1.05); /* Slight zoom effect */
+    transform: scale(1.05);
 }
 
 .recipe-card::before {
@@ -190,24 +187,24 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Black overlay with opacity */
+    background: rgba(0, 0, 0, 0.6);
     opacity: 0;
-    transition: opacity 0.3s ease; /* Smooth fade-in */
+    transition: opacity 0.3s ease;
     z-index: 1;
     border-radius: 5px;
 }
 
 .recipe-card:hover::before {
-    opacity: 1; /* Show overlay on hover */
+    opacity: 1;
 }
 
-/* "More details" button */
+
 .recipe-card .more-details-btn {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 2; /* Above the overlay */
+    z-index: 2;
     background: #B65F54;
     color: #fff;
     font-size: 14px;
@@ -217,17 +214,17 @@
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease; /* Smooth fade-in */
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .recipe-card:hover .more-details-btn {
-    opacity: 1; /* Show button on hover */
+    opacity: 1;
     cursor: pointer;
 }
 
 .recipe-card .more-details-btn:hover {
-    background: #83463e; /* Slightly darker background on hover */
+    background: #83463e;
 }
 
 .what-we-offer {
@@ -339,6 +336,7 @@
     .all-recipes-heading {
         text-align: center;
         border: none;
+        width: 250px;
     }
     
     .all-recipes-heading h1 {

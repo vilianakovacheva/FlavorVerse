@@ -5,11 +5,12 @@ import { UserService } from '../../user/user.service';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { LoaderComponent } from '../../shared/loader/loader.component';
 
 @Component({
   selector: 'app-search-recipe',
   standalone: true,
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule, RouterLink, LoaderComponent],
   templateUrl: './search-recipe.component.html',
   styleUrl: './search-recipe.component.css'
 })

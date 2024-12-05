@@ -66,6 +66,10 @@
     transform: rotate(-5deg);
 }
 
+.no-search-results {
+    text-align: center;
+}
+
 .no-search-results h3 {
     font-size: 35px;
     margin-top: 15px;

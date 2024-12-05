@@ -14,21 +14,9 @@
 
         <div class="peronal-info-div">
 
-            <div class="personal-info personal-info-first-name">
-                <h5>FIRST NAME</h5>
-                <p>John</p>
-                <div class="personal-info-seperator"></div>
-            </div>
-            
-            <div class="personal-info personal-info-last-name">
-                <h5>LAST NAME</h5>
-                <p>Smith</p>
-                <div class="personal-info-seperator"></div>
-            </div>
-
             <div class="personal-info personal-info-email">
-                <h5>EMAIL</h5>
-                <p>{{'john@abv.bg'}}</p>
+                <h5>EMAIL:</h5>
+                <p>{{email}}</p>
                 <div class="personal-info-seperator"></div>
             </div>
 
@@ -44,39 +32,32 @@
         <h2>Recipes added by you:</h2>
     </div>
 
-    <!-- <div class="no-recipes-added-by-person">
-        <p>There are not any recipes added by you! <i class="fa-regular fa-face-sad-tear"></i></p>
-    </div> -->
-
-    <div class="recipes-cards">
-
-        <div class="recipe-card">
-            <img src="https://images7.alphacoders.com/129/1290221.jpg">
-            <a href="#" class="more-details-btn">More details</a>
-            <h6>Pizza</h6>
-
-            <div class="recipe-person-cals">
-                <h5>John Smith</h5>
-                <div class="calories">
-                    <p><i class="fa-solid fa-fire-flame-curved"></i> 500 cals</p>
+    @if(isLoading) {
+        <app-loader />
+    } @else {
+        @if(recipes.length > 0) {
+            <div class="recipes-cards">
+                @for (recipe of recipes; track $index) {
+        
+                <div class="recipe-card">
+                    <img src={{recipe.img}}>
+                    <a routerLink="/recipes/{{recipe._id}}" class="more-details-btn">More details</a>
+                    <h6>{{recipe.name}}</h6>
+        
+                    <div class="recipe-cals">
+                        <div class="calories">
+                            <p><i class="fa-solid fa-fire-flame-curved"></i> {{recipe.calories}} cals</p>
+                        </div>
+                    </div>
                 </div>
+                }
             </div>
-        </div>
-
-        <div class="recipe-card">
-            <img src="https://images6.alphacoders.com/100/thumb-1920-1002794.jpg">
-            <a href="#" class="more-details-btn">More details</a>
-            <h6>Muffins</h6>
-
-            <div class="recipe-person-cals">
-                <h5>John Smith</h5>
-                <div class="calories">
-                    <p><i class="fa-solid fa-fire-flame-curved"></i> 530 cals</p>
-                </div>
+            } @else {
+            <div class="no-recipes-added-by-person">
+                <p>There are not any recipes added by you! <i class="fa-regular fa-face-sad-tear"></i></p>
             </div>
-        </div>
+            }
+    }
 
 
-    </div>
-    
 </section>

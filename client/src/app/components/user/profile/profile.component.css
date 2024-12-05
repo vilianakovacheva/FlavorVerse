@@ -20,16 +20,18 @@
 .profile-info {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 70px;
 }
 
 .profile-info .profile-image img {
-    width: 15%;
+    width: 20%;
 }
 
 .peronal-info-div {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 10px;
     /* gap: 300px; */
@@ -44,13 +46,13 @@
 
 .personal-info h5 {
     font-weight: 400;
-    font-size: 19px;
+    font-size: 35px;
     color: #B76156;
     margin-bottom: 10px;
 }
 
 .personal-info p {
-    font-size: 22px;
+    font-size: 30px;
 }
 
 .personal-info-seperator {
@@ -58,14 +60,10 @@
     background: #a48581;;
 }
 
-
-
-
 .recipes-added-by-person-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     gap: 100px;
     padding: 160px 100px;
 }
@@ -73,6 +71,8 @@
 .recipes-added-by-person-heading {
     border-bottom: 1px solid grey;
     padding-bottom: 20px;
+    color: #67342d;
+    margin: 0 auto;
 }
 
 .recipes-added-by-person-heading h2 {
@@ -115,16 +115,11 @@
     text-shadow: #ff008489 0px 5px 15px;
 }
 
-.recipe-person-cals {
+.recipe-cals {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 25px 15px 20px 15px;
-}
-
-.recipe-person-cals h5 {
-    font-size: 16px;
-    font-weight: 450;
 }
 
 .calories {

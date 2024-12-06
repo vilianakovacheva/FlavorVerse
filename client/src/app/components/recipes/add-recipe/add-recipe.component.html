@@ -147,14 +147,14 @@
                 }
 
                 <div class="dish-ingredients">
-                    <label for="ingredients">Ingredients <span>(slash-separated)</span></label>
+                    <label for="ingredients">Ingredients <span>(pipe-separated)</span></label>
                     <textarea 
                     id="ingredients" 
                     name="ingredients" 
                     rows="5" 
-                    placeholder="Olive oil / Ground beef or pork / Onion / Garlic / Carrot / Celery / Tomato paste / Crushed tomatoes / Beef broth / Red wine (optional) / Oregano / Basil / Bay leaf / Salt / Pepper / Pasta / Parmesan (optional)"
+                    placeholder="Olive oil | Ground beef or pork | Onion | Garlic | Carrot | Celery | Tomato paste | Crushed tomatoes | Beef broth | Red wine (optional) | Oregano | Basil | Bay leaf | Salt | Pepper | Pasta | Parmesan (optional)"
                     ngModel
-                    required
+                    require
                     #ingredientsInput="ngModel"
                     ></textarea>
 
@@ -168,12 +168,12 @@
 
 
                   <div class="dish-instructions">
-                    <label for="steps">Steps <span>(slash-separated)</span></label>
+                    <label for="steps">Steps <span>(pipe-separated)</span></label>
                     <textarea 
                     id="steps" 
                     name="steps" 
                     rows="7" 
-                    placeholder="Cook ground meat in olive oil until browned / Add chopped vegetables and sauté until softened / Stir in tomato paste, crushed tomatoes, beef broth, and wine / Season with herbs and spices, then simmer for 45 minutes / Cook pasta and serve with the sauce, garnished with Parmesan if desired."
+                    placeholder="Cook ground meat in olive oil until browned | Add chopped vegetables and sauté until softened | Stir in tomato paste, crushed tomatoes, beef broth, and wine | Season with herbs and spices, then simmer for 45 minutes | Cook pasta and serve with the sauce, garnished with Parmesan if desired."
                     ngModel
                     required
                     #stepsInput="ngModel"

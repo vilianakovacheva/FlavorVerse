@@ -24,8 +24,8 @@ export class AddRecipeComponent {
 
     const { name, img, description, prepTime, cookTime, servings, calories, ingredients, steps } = form.value;
 
-    const ingredientsArray = ingredients.split('/').map((ing: string) => ing.trim());
-    const stepsArray = steps.split('/').map((step: string) => step.trim());
+    const ingredientsArray = ingredients.split('|').map((ing: string) => ing.trim());
+    const stepsArray = steps.split('|').map((step: string) => step.trim());
 
     this.apiService.addRecipe(
       name,

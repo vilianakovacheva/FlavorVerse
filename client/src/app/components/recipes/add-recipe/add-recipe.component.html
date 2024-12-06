@@ -17,6 +17,7 @@
                     placeholder="Pasta"
                     ngModel
                     required
+                    maxlength="30"
                     #nameInput="ngModel"
                     >
                 </div>
@@ -77,6 +78,7 @@
                     id="prepTime"
                     name="prepTime"
                     placeholder="15"
+                    min="1"
                     ngModel
                     required
                     #prepTimeInput="ngModel"
@@ -87,6 +89,10 @@
                     @if(prepTimeInput?.errors?.['required']) {
                         <p class="error">Prep Time is required!</p>
                     }
+
+                    @if(prepTimeInput?.errors?.['min']) {
+                        <p class="error">Prep time can't be a negative number or 0!</p>
+                    }
                 }
                 
                 <div class="dish-info dish-cookTime">
@@ -96,6 +102,7 @@
                     id="cookTime"
                     name="cookTime"
                     placeholder="60"
+                    min="1"
                     ngModel
                     required
                     #cookTimeInput="ngModel"
@@ -106,6 +113,10 @@
                     @if(cookTimeInput?.errors?.['required']) {
                         <p class="error">Cook Time is required!</p>
                     }
+
+                    @if(cookTimeInput?.errors?.['min']) {
+                        <p class="error">Cook time can't be a negative number or 0!</p>
+                    }
                 }
 
                 <div class="dish-info dish-servings">
@@ -115,6 +126,7 @@
                     id="servings"
                     name="servings"
                     placeholder="4"
+                    min="1"
                     ngModel
                     required
                     #servingsInput="ngModel"
@@ -125,6 +137,10 @@
                     @if(servingsInput?.errors?.['required']) {
                         <p class="error">Servings are required!</p>
                     }
+
+                    @if(servingsInput?.errors?.['min']) {
+                        <p class="error">Servings can't be a negative number or 0!</p>
+                    }
                 }
 
                 <div class="dish-info dish-calories">
@@ -134,6 +150,7 @@
                     id="calories"
                     name="calories"
                     placeholder="440"
+                    min="0"
                     ngModel
                     required
                     #caloriesInput="ngModel"
@@ -143,6 +160,10 @@
                 @if(caloriesInput?.touched) {
                     @if(caloriesInput?.errors?.['required']) {
                         <p class="error">Calories are required!</p>
+                    }
+
+                    @if(caloriesInput?.errors?.['min']) {
+                        <p class="error">Calories can't be a negative number!</p>
                     }
                 }
 

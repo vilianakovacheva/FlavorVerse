@@ -1,6 +1,6 @@
 import { HttpInterceptorFn } from '@angular/common/http';
 import { environment } from '../environments/environment.development';
-import { catchError } from 'rxjs';
+import { catchError, throwError } from 'rxjs';
 import { inject } from '@angular/core';
 import { ErrorMsgService } from './components/core/error-msg/error-msg.service';
 import { Router } from '@angular/router';
@@ -33,12 +33,10 @@ export const appInterceptor: HttpInterceptorFn = (req, next) => {
       if(err.status === 401) {
         localStorage.removeItem('X-Authorization');
       } else {
-        console.log('Error');
         errorMsgService.setError(err);
-        // router.navigate(['/error'])
       }
 
-      return [err];
+      return throwError(() => err);
     })
   )
 };

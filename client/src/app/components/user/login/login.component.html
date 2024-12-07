@@ -1,3 +1,7 @@
+@if(errorMsg) {
+    <app-error-msg />
+}
+
 <section class="login-section">
 
     <div class="login-div">
@@ -62,10 +66,6 @@
                     @if(passwordInput?.errors?.['minlength']) {
                         <p class="error">Password must be at least 5 characters long!</p>
                     }
-                }
-
-                @if(errorMessage) {
-                    <p class="error">{{errorMessage}}</p>
                 }
 
                 <input [disabled]="form.invalid" [style]="{backgroundColor: form.invalid ? 'grey' : '#a06356', cursor: form.invalid ? 'not-allowed' : 'pointer'}" type="submit" value="Login">

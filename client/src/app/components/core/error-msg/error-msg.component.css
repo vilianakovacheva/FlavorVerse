@@ -2,22 +2,21 @@
     position: fixed;
     z-index: 10;
     right: 8%;
-    top: 8%;
-    padding: 0.5rem;
+    padding: 15px 40px;
+    font-size: 20px;
     border-radius: 0.5rem;
     color: rgb(255, 255, 255);
+    font-weight: bold;
     font-style: italic;
     text-decoration: underline;
     box-shadow: 0 5px 10px rgb(204, 204, 204);
-    background-color: rgba(238, 74, 74, 0.699)
+    background-color: rgba(192, 54, 54, 0.906);
+    margin-top: 90px;
 }
 
-
-.error-message {
-    background-color: rgba(238, 74, 74, 0.699);
-}
-
-
-.success-message {
-    background-color: rgba(99, 230, 81, 0.699);
+@media screen and (max-width: 768px) {
+    .notification {
+        padding: 10px 15px;
+        font-size: 15px;
+    }
 }

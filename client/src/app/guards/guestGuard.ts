@@ -9,7 +9,6 @@ export class GuestGuard implements CanActivate {
   constructor(private router: Router) {}
 
   canActivate(): boolean {
-    debugger
     const isLoggedIn = localStorage.getItem('X-Authorization') !== null;
     if (isLoggedIn) {
       this.router.navigate(['/']);

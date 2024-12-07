@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../../../types/recipe';
 import { ApiService } from '../../../api.service';
-import { UserService } from '../../user/user.service';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';

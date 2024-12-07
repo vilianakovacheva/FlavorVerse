@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Recipe } from './types/recipe';
+import { Comment } from './types/comment';
 import { Observable } from 'rxjs';
+import { Like } from './types/likes';
 
 @Injectable({
   providedIn: 'root'
@@ -38,5 +40,25 @@ export class ApiService {
 
   deleteRecipe(recipeId: string) {
     return this.http.delete<Recipe>(`/api/data/recipes/${recipeId}`);
+  }
+
+  getRecipeComments(recipeId: string) {
+    return this.http.get<Comment[]>(`/api/data/comments?where=recipeId%3D"${recipeId}"`);
+  }
+
+  postRecipeComment(comment: {author: string, content: string, recipeId: string}) {
+    return this.http.post<Comment>('/api/data/comments', comment);
+  }
+
+  getRecipeLikes(recipeId: string): Observable<Like[]> {
+    return this.http.get<Like[]>(`/api/data/likes?where=recipeId%3D"${recipeId}"`);
+  }
+
+  likeRecipe(data: { recipeId: string }) {
+    return this.http.post('/api/data/likes', data);
+  }
+
+  deleteLike(likeId: string) {
+    return this.http.delete(`/api/data/likes/${likeId}`);
   }
 }

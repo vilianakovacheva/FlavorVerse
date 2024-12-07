@@ -1,138 +1,154 @@
-<section class="details-heading-btns-section">
 
-    <div class="details-heading-btns-info">
-        <h1>{{recipe.name}}</h1>
+@if(areRecipeDetailsLoading) {
+    <app-loader />
+} @else {
+    <section class="details-heading-btns-section">
 
-        @if(showModal) {
-            <div class="modal-overlay" (click)="cancelDelete()">
-                <div class="modal" (click)="$event.stopPropagation()">
-                    <!-- Close button -->
-                    <button class="close-btn" (click)="cancelDelete()">×</button>
-                    
-                    <h3>Are you sure you want to delete your recipe for <span>{{recipe.name}}</span>?</h3>
-                    <div class="modal-buttons">
-                        <button class="delete-confirm-btn" (click)="confirmDelete()">Delete</button>
-                        <button class="cancel-btn" (click)="cancelDelete()">Cancel</button>
+        <div class="details-heading-btns-info">
+            <h1>{{recipe.name}}</h1>
+    
+            @if(showModal) {
+                <div class="modal-overlay" (click)="cancelDelete()">
+                    <div class="modal" (click)="$event.stopPropagation()">
+                        <!-- Close button -->
+                        <button class="close-btn" (click)="cancelDelete()">×</button>
+                        
+                        <h3>Are you sure you want to delete your recipe for <span>{{recipe.name}}</span>?</h3>
+                        <div class="modal-buttons">
+                            <button class="delete-confirm-btn" (click)="confirmDelete()">Delete</button>
+                            <button class="cancel-btn" (click)="cancelDelete()">Cancel</button>
+                        </div>
                     </div>
                 </div>
+            }
+    
+    
+            @if(isLoggedIn) {
+    
+                @if(recipe._ownerId === currentUserId) {
+                    <div class="author-btns">
+                        <a routerLink="/recipes/{{recipe._id}}/edit"  class="edit-btn">Edit</a>
+                        <button class="delete-btn" (click)="openModal()">Delete</button>
+                    </div>
+                } @else {
+                    @if(!hasLiked) {
+                        <div class="user-btn-not-liked">
+                            <button (click)="likeRecipe()" class="like-btn"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                    } @else {
+                        <div class="user-liked">
+                            <button (click)="unlikeRecipe()" class="unlike-btn"><i class="fa-solid fa-heart"></i></button>
+                        </div>
+                    }
+                }
+    
+            } 
+    
+            
+    
+            <div class="likes">
+                Likes: <span>{{likesCount}}</span>
             </div>
-        }
-
-
-        @if(isAuthor) {
-            <div class="author-btns">
-                <a routerLink="/recipes/{{recipe._id}}/edit"  class="edit-btn">Edit</a>
-                <button class="delete-btn" (click)="openModal()">Delete</button>
-            </div>
-        }
+    
+        </div>
+    
+        <div class="details-seperator"></div>
+    
+    </section>
+    
+    <section class="details-image-section">
+    
+        <div class="details-image">
+            <img src={{recipe.img}}>
+        </div>
+    
+    </section>
+    
+    <section class="short-description">
+        <p>{{recipe.description}}</p>
+    </section>
+    
+    <section class="recipe-details-info-section">
+    
+        <div class="recipe-details-info">
+    
+            <div class="left">
+    
+                <div class="time-servings-all-info">
+    
+                    <div class="one-info">
+                        <h6>PREP TIME</h6>
+                        <p>{{recipe.prepTime}} MINS</p>
+                    </div>
         
-
-        <!-- <div class="user-btn-not-liked">
-            <button class="like-btn">Like</button>
-        </div> -->
-
-        <!-- <div class="user-liked">
-            <p>You've already liked this recipe! <i class="fa-regular fa-heart"></i></p>
-        </div> -->
-
-    </div>
-
-    <div class="details-seperator"></div>
-
-</section>
-
-<section class="details-image-section">
-
-    <div class="details-image">
-        <img src={{recipe.img}}>
-    </div>
-
-</section>
-
-<section class="short-description">
-    <p>{{recipe.description}}</p>
-</section>
-
-<section class="recipe-details-info-section">
-
-    <div class="recipe-details-info">
-
-        <div class="left">
-
-            <div class="time-servings-all-info">
-
-                <div class="one-info">
-                    <h6>PREP TIME</h6>
-                    <p>{{recipe.prepTime}} MINS</p>
-                </div>
-    
-                <div class="one-info">
-                    <h6>COOK TIME</h6>
-                    <p>{{recipe.cookTime}} MINS</p>
-                </div>
-    
-                <div class="one-info">
-                    <h6>SERVINGS</h6>
-                    <p>{{recipe.servings}}</p>
-                </div>
-    
-                
-            </div>
-
-            <div class="ingredients">
-                <h3>Ingredients</h3>
-
-                <ul class="ingredients-ul">
-                    @for (ingredient of recipe.ingredients; track $index) {
-                        <li>{{ingredient}}</li>
-                    }
-                </ul>
-            </div>
-
-            <div class="instructions">
-                <h3>Steps</h3>
-
-                <ol class="instructions-ol">
-                    @for (step of recipe.steps; track $index) {
-                        <li>{{step}}</li>
-                    }
-                </ol>
-            </div>
-
-        </div>
-
-        <div class="right">
-
-            <div class="nutrition-facts">
-                <h2>Nutrition Facts</h2>
-
-                <div class="calories-wrapper">
-
-                    <div class="calories-text">
-                        <p>Calories / per serving</p>
+                    <div class="one-info">
+                        <h6>COOK TIME</h6>
+                        <p>{{recipe.cookTime}} MINS</p>
                     </div>
-
-                    <div class="calories-number">
-                        <p>{{recipe.calories}}</p>
+        
+                    <div class="one-info">
+                        <h6>SERVINGS</h6>
+                        <p>{{recipe.servings}}</p>
                     </div>
-
+        
+                    
                 </div>
-
+    
+                <div class="ingredients">
+                    <h3>Ingredients</h3>
+    
+                    <ul class="ingredients-ul">
+                        @for (ingredient of recipe.ingredients; track $index) {
+                            <li>{{ingredient}}</li>
+                        }
+                    </ul>
+                </div>
+    
+                <div class="instructions">
+                    <h3>Steps</h3>
+    
+                    <ol class="instructions-ol">
+                        @for (step of recipe.steps; track $index) {
+                            <li>{{step}}</li>
+                        }
+                    </ol>
+                </div>
+    
             </div>
-
-            <div class="quote">
-                <i class="fa-solid fa-quote-left"></i>
-                <p>"Food is not just fuel, it's information. It talks to your DNA and tells it what to do." – Dr. Mark Hyman</p>
-                <i class="fa-solid fa-quote-left"></i>
+    
+            <div class="right">
+    
+                <div class="nutrition-facts">
+                    <h2>Nutrition Facts</h2>
+    
+                    <div class="calories-wrapper">
+    
+                        <div class="calories-text">
+                            <p>Calories / per serving</p>
+                        </div>
+    
+                        <div class="calories-number">
+                            <p>{{recipe.calories}}</p>
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+                <div class="quote">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <p>"Food is not just fuel, it's information. It talks to your DNA and tells it what to do." – Dr. Mark Hyman</p>
+                    <i class="fa-solid fa-quote-left"></i>
+                </div>
+    
             </div>
-
+    
         </div>
-
-    </div>
-
-    <div class="whole-details-seperator"></div>
-
-</section>
+    
+        <div class="whole-details-seperator"></div>
+    
+    </section>
+}
 
 <section class="comments-section">
 
@@ -142,49 +158,46 @@
 
     <div class="comment-main-seperator"></div>
 
-    <!-- <div class="no-comments">
-        <h3>There are no comments yet! <i class="fa-regular fa-face-sad-tear"></i></h3>
-    </div> -->
-
-    <div class="all-comments">
-    
-        <div class="one-comment">
-            <h6>Pamela Anderson</h6>
-            <p>This recipe is amazing! The Bolognese sauce turned out so rich and flavorful. I added a little extra garlic and a pinch of red pepper flakes for a bit of heat, and it was perfect. My family loved it – definitely making this again!</p>
-            <div class="comment-seperator"></div>
+    @if(isLoading) {
+        <app-loader />
+    } @else {
+        @if(comments.length > 0) {
+            <div class="all-comments">
+        
+                @for (comment of comments; track $index) {
+                    <div class="one-comment">
+                        <h6>{{comment.author}}
+                        @if(comment._ownerId === recipe._ownerId) {
+                            <span>(Recipe's Author)</span>
+                        }
+                        </h6>
+                        <p>{{comment.content}}</p>
+                        <div class="comment-seperator"></div>
+                    </div>
+                }
+        
+            </div>
+        } @else {
+             <div class="no-comments">
+            <h3>There are no comments yet! <i class="fa-regular fa-face-sad-tear"></i></h3>
         </div>
+        }
+    }
 
-        <div class="one-comment">
-            <h6>John Smith</h6>
-            <p>This Pasta Bolognese is a game-changer! The sauce was so hearty and delicious. I used ground turkey instead of beef, and it still turned out incredible. A new family favorite for sure!</p>
-            <div class="comment-seperator"></div>
-        </div>
-
-        <div class="one-comment">
-            <h6>Elena Wilson</h6>
-            <p>Such a simple but flavorful recipe! I followed the instructions exactly, and the Bolognese sauce was perfect – rich and creamy. I’ll be making this again next week for sure!</p>
-            <div class="comment-seperator"></div>
-        </div>
-
-        <div class="one-comment">
-            <h6>Mary Smith</h6>
-            <p>I’ve tried many Bolognese recipes, but this one is by far the best. The combination of herbs and milk made the sauce so creamy and comforting. My kids couldn’t get enough of it!</p>
-            <div class="comment-seperator"></div>
-        </div>
-
-    </div>
 
 </section>
 
-<section class="add-comment">
-    <h3>Write a comment</h3>
-    <form action="" class="write-comment-form">
-        <textarea name="" id=""></textarea>
-        <input type="submit" value="Post comment">
-    </form>
-</section>
-
-<!-- <section class="not-logged-comment">
-    <p class="write-comment-not-authenticated"><a href="#">Log in</a> or <a href="#">Sign up</a> (if you don't have an
+@if(isLoggedIn) {
+    <section class="add-comment">
+        <h3>Write a comment</h3>
+        <form (ngSubmit)="addComment()" class="write-comment-form">
+            <textarea [(ngModel)]="newComment" name="commentContent" id="commentContent" required></textarea>
+            <input type="submit" [disabled]="!newComment.trim()" [style.cursor]="!newComment.trim() ? 'not-allowed' : 'pointer'" value="Post comment" >
+        </form>
+    </section>
+} @else {
+    <section class="not-logged-comment">
+    <p class="write-comment-not-authenticated"><a routerLink="/login">Log in</a> or <a routerLink="/register">Sign up</a> (if you don't have an
         account) to write your comment</p>
-</section> -->
+</section>
+}

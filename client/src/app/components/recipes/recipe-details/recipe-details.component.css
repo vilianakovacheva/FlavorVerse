@@ -50,29 +50,46 @@
     background: #c16358;
     color: #fff;
     border: 2px solid #75413a;
+    cursor: pointer;
 }
 
 .delete-btn:hover {
     background: #6b3832;
 }
 
+.likes {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+    margin-bottom: -20px;
+    color:#9c4b40;
+}
+
+.likes span {
+    color: #70342c;
+}
+
 .user-btn-not-liked button {
-    padding: 6px 17px;
-    font-size: 17px;
-    font-weight: bold;
-    background: #ad837e;
-    color: #fff;
-    border: 2px solid #75413a;
-    border-radius: 5px;
+    border: none;
+    background: none;
+    font-size: 40px;
+    color: red;
+    cursor: pointer;
 }
 
 .user-btn-not-liked button:hover {
-    background: #664e4b;
+    font-size: 45px;
 }
 
-.user-liked {
-    color: #8c473f;
-    font-size: 23px;
+.unlike-btn {
+    color: red;
+    border: none;
+    background: none;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.unlike-btn:hover {
+    font-size: 45px;
 }
 
 .details-seperator {
@@ -99,18 +116,6 @@
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-/* .details-image-section {
-    text-align: center;
-    border-radius: 10px;
-    padding: 0 150px;
-}
-
-.details-image img {
-    width: 70%;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    border-radius: 10px;
-} */
-
 .short-description {
     padding: 60px 150px;
     text-align: center;
@@ -128,7 +133,6 @@
 .recipe-details-info {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     gap: 30px;
 }
 
@@ -397,7 +401,6 @@
     background: #66342e;
 }
 
-/* Modal css */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -412,13 +415,13 @@
 }
 
 .modal {
-    position: relative; /* This makes the close button position relative to the modal */
+    position: relative;
     background: white;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 430px; /* Optional: Adjust width if needed */
+    width: 430px;
 }
 
 .modal h3 {
@@ -462,8 +465,8 @@
  
 .close-btn {
     position: absolute;
-    top: 0px; /* Adjust to align properly within the modal */
-    right: 5px; /* Adjust to align properly within the modal */
+    top: 0px;
+    right: 5px;
     background: none;
     border: none;
     font-size: 25px;
@@ -687,7 +690,7 @@
     }
 
     .modal {
-        width: 300px; /* Optional: Adjust width if needed */
+        width: 300px;
     }
 
     

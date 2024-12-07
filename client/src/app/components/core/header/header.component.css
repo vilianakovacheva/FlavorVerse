@@ -40,7 +40,6 @@ header {
     position: relative;
     padding: 5px 0;
     display: inline-block;
-    /* Ensures the line stretches the full width of the text */
     transition: all 0.3s ease-in-out;
 }
 
@@ -52,19 +51,16 @@ header {
     width: 0%;
     height: 2px;
     background-color: #B76156;
-    /* Pink underline */
     transition: width 0.3s ease, left 0.3s ease;
 }
 
 .header-menu li a:hover {
     color: #B76156;
     transform: translateY(-3px);
-    /* Slight upward movement */
 }
 
 .header-menu li a:hover::before {
     width: 100%;
-    /* Full width underline */
     left: 0;
 }
 
@@ -116,7 +112,6 @@ header {
     transition: all 0.3s ease;
 }
 
-/* Hamburger Menu */
 .mobileTogglerCheckbox,
 .mobileToggler {
     display: none;
@@ -152,7 +147,6 @@ header {
         display: block !important;
     }
 
-    /* Mobile Navigation */
     header {
         flex-wrap: wrap;
     }
@@ -180,7 +174,6 @@ header {
         padding: 10px 0;
     }
 
-    /* Auth Buttons for Mobile */
     .auth-btns {
         flex-direction: column;
         gap: 5px;

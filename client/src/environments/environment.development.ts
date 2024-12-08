@@ -1,3 +1,3 @@
 export const environment = {
-    apiUrl: 'http://localhost:3030'
+    apiUrl: 'https://flavorverse-server.onrender.com'
 }

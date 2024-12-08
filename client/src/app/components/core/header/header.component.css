@@ -121,6 +121,7 @@ header {
 @media screen and (max-width: 1190px) {
     header {
         display: flex;
+        flex-direction: column;
         gap: 0.5px;
         padding: 0px 90px;
         align-items: center;

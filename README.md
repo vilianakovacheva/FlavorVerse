@@ -46,7 +46,7 @@ The pages and functionalities which are accessible to all logged-in users are:
 
 
 
-* Vacation's details
+* Recipe's details
 <br>
 
 —If the user is the owner of the recipe-
@@ -67,3 +67,41 @@ The pages and functionalities which are accessible to all logged-in users are:
 * Add recipe
 * Profile
 * Logout functionality
+
+# Responsive design
+FlavorVerse is designed with responsive layout, ensuring a seamless experience across different devices. Whether you’re exploring recipes on your desktop, tablet, or smartphone, FlavorVerse adapts perfectly to your screen size and resolution.
+
+# Deployments
+I have deployed my project to Render.com and to Vercel
+
+* Render.com: https://flavorverse-app.onrender.com
+* Vercel: https://flavor-verse-sand.vercel.app
+
+***MIND THAT: When you first open it you have to wait a little bit because after the first request the back-end needs time to start***
+
+# How to run the application
+
+First you have to clone my project:
+
+```
+git clone https://github.com/vilianakovacheva/FlavorVerse.git
+```
+
+Then in the terminal write ```npm install``` to install all the dependencies for this project.
+
+When you have installed the dependencies, write in the terminal:
+```
+cd client
+ng serve
+```
+
+Then there is no need to start the server, because my app uses the deployed server
+
+And then open the link from your terminal that appeared after you typed ```ng serve``` so you can see my project.
+
+# Technologies and tools
+<img align="left" alt="html" width="35px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png" />
+
+<img align="left" alt="css" width="25px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/800px-CSS3_logo_and_wordmark.svg.png" />
+
+<img align="left" alt="css" width="33px" src="https://images.seeklogo.com/logo-png/50/2/angular-icon-logo-png_seeklogo-507324.png?v=638686931700000000" />

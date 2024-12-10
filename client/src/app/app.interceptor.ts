@@ -30,7 +30,7 @@ export const appInterceptor: HttpInterceptorFn = (req, next) => {
 
   return next(req).pipe(
     catchError((err) => {
-      if(err.status === 401) {
+      if(err.status === 401 || err.status === 403) {
         localStorage.removeItem('X-Authorization');
       } else {
         errorMsgService.setError(err);

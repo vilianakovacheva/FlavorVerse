@@ -191,5 +191,10 @@ header {
         text-align: center;
     }
 
+    .auth-btns .logout {
+        margin-top: 5px;
+        margin-bottom: 18px;
+    }
+
     
 }

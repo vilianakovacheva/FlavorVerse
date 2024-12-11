@@ -77,6 +77,8 @@ I have deployed my project to Render.com and to Vercel
 * Render.com: https://flavorverse-app.onrender.com
 * Vercel: https://flavor-verse-sand.vercel.app
 
+BUT because these are the deployed front-ends in order to work the api url in the environments folder in the environment.development.ts file must be changed to this: https://flavorverse-server.onrender.com  which is the deployed server!!
+
 ***MIND THAT: When you first open it you have to wait a little bit because after the first request the back-end needs time to start***
 
 # How to run the application
@@ -95,7 +97,13 @@ cd client
 ng serve
 ```
 
-Then there is no need to start the server, because my app uses the deployed server
+When you run the project, you have to start the server, so my project works properly
+<br>
+Write in the terminal:
+```
+cd server
+node server.js
+```
 
 And then open the link from your terminal that appeared after you typed ```ng serve``` so you can see my project.
 

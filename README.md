@@ -57,7 +57,7 @@ The pages and functionalities which are accessible to all logged-in users are:
 
 —If the user is not the owner of the recipe-
 1. Like recipe
-2. Unlike recipe
+2. Dislike recipe
 3. Comment recipe
 
 

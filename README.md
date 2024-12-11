@@ -77,7 +77,7 @@ I have deployed my project to Render.com and to Vercel
 * Render.com: https://flavorverse-app.onrender.com
 * Vercel: https://flavor-verse-sand.vercel.app
 
-BUT because these are the deployed front-ends in order to work the api url in the environments folder in the environment.development.ts file must be changed to this: https://flavorverse-server.onrender.com  which is the deployed server!!
+BUT because these are the deployed front-ends in order to work the api url in the environments folder in the environment.development.ts file must be changed to this: https://flavorverse-server.onrender.com  which is the deployed server or another option is not to change it but just start the server from the terminal (this action is described below )!!
 
 ***MIND THAT: When you first open it you have to wait a little bit because after the first request the back-end needs time to start***
 

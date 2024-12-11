@@ -102,7 +102,7 @@ export class RecipeDetailsComponent implements OnInit {
     });
   }
 
-  unlikeRecipe(): void {
+  dislikeRecipe(): void {
     this.apiService
       .getRecipeLikes(this.recipeId)
       .subscribe((likes: Like[]) => {

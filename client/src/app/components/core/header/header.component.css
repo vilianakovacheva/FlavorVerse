@@ -167,7 +167,7 @@ header {
     .header-nav .header-menu {
         flex-direction: column;
         gap: 15px;
-        padding: 0px;
+        padding: 10px;
     }
 
     .header-menu li a {
